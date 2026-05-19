@@ -285,20 +285,25 @@ function loadData(){
     const d = localStorage.getItem(STORAGE_KEY);
     workoutSets = d ? JSON.parse(d) : [];
   }catch(e){ workoutSets = []; }
-  if(workoutSets.length === 0) addSampleSets();
+  if(workoutSets.length === 0) SampleSets();
 }
 function saveData(){ localStorage.setItem(STORAGE_KEY, JSON.stringify(workoutSets)); }
 
-function addSampleSets(){
+function SampleSets(){
   workoutSets = [
     {
-      id: 'sample1', name: 'Poranne ćwiczenia',
+      id: 'sample1', name: 'Poranna rutyna',
       exercises: [
-        {id:'e1',name:'Pajacyki',desc:'Skoki z klaśnięciem',type:'time',duration:30},
-        {id:'e2',name:'Pompki',desc:'Dłonie na szerokość ramion',type:'reps',reps:10},
-        {id:'e3',name:'Deska',desc:'Plecy proste, brzuch napięty',type:'time',duration:45},
-        {id:'e4',name:'Przysiady',desc:'Kolana nad palcami stóp',type:'reps',reps:15},
-        {id:'e5',name:'Skoki na miejscu',desc:'Szybkie tempo',type:'time',duration:20},
+        {id:'e1',name:'Krążenia głową w prawo',desc:'',type:'time',duration:30},
+        {id:'e2',name:'Krążenia głową w lewo',desc:'',type:'time',duration:30},
+        {id:'e3',name:'Krążenia barki do tyłu',desc:'',type:'time',duration:30},
+        {id:'e4',name:'Krążenia barki do przodu',desc:'',type:'time',duration:30},
+        {id:'e5',name:'Krążenia biodra w prawo',desc:'',type:'time',duration:30},
+        {id:'e6',name:'Krążenia biodra w lewo',desc:'',type:'time',duration:30},
+        {id:'e7',name:'Krążenia kolana na zewnątrz',desc:'',type:'time',duration:30},
+        {id:'e8',name:'Krążenia kolana do wewnątrz',desc:'',type:'time',duration:30},
+        {id:'e9',name:'Krążenia stopa prawa',desc:'',type:'time',duration:30},
+        {id:'e10',name:'Krążenia stopa lewa',desc:'',type:'time',duration:30},
       ]
     },
     {
