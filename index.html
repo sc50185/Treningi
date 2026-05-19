@@ -43,8 +43,6 @@ body{
   --radius-lg:18px;
 }
 
-/* ===== GLOBAL ===== */
-
 .screen{
   display:none;
   flex-direction:column;
@@ -54,8 +52,6 @@ body{
 .screen.active{
   display:flex;
 }
-
-/* ===== HEADER ===== */
 
 .header{
   background:var(--bg2);
@@ -94,18 +90,12 @@ body{
   gap:12px;
 }
 
-/* ===== CARDS ===== */
-
 .card{
   background:var(--bg2);
   border:1px solid var(--border);
   border-radius:var(--radius-lg);
   padding:16px 18px;
   cursor:pointer;
-}
-
-.card:active{
-  background:var(--bg3);
 }
 
 .card-row{
@@ -118,12 +108,11 @@ body{
   width:42px;
   height:42px;
   border-radius:10px;
-  background:var(--bg3);
   display:flex;
   align-items:center;
   justify-content:center;
+  background:var(--bg3);
   font-size:18px;
-  flex-shrink:0;
 }
 
 .card-info{
@@ -134,24 +123,24 @@ body{
   font-family:'Barlow Condensed',sans-serif;
   font-size:17px;
   font-weight:700;
+  letter-spacing:.5px;
   text-transform:uppercase;
 }
 
 .card-info p{
   font-size:13px;
   color:var(--text2);
+  margin-top:2px;
 }
 
 .card-arrow{
   color:var(--text3);
-  font-size:16px;
+  font-size:18px;
 }
-
-/* ===== BUTTONS ===== */
 
 .btn{
   border:none;
-  border-radius:12px;
+  border-radius:var(--radius);
   font-family:'Barlow Condensed',sans-serif;
   font-weight:700;
   letter-spacing:1px;
@@ -162,34 +151,31 @@ body{
 .btn-primary{
   background:var(--green);
   color:#000;
+  padding:14px 24px;
 }
 
 .btn-secondary{
   background:var(--bg3);
   color:var(--text);
+  padding:12px 20px;
   border:1px solid var(--border);
 }
 
-.btn-danger{
-  background:var(--red);
+.btn-orange{
+  background:var(--orange);
   color:#fff;
+  padding:14px 24px;
 }
 
 .btn-sm{
-  padding:8px 14px;
   font-size:14px;
+  padding:8px 14px;
+  border-radius:8px;
 }
 
 .btn-full{
   width:100%;
 }
-
-.btn-large{
-  padding:18px;
-  font-size:22px;
-}
-
-/* ===== INPUTS ===== */
 
 .input-group{
   display:flex;
@@ -199,38 +185,36 @@ body{
 
 .input-group label{
   font-size:13px;
+  font-weight:600;
   color:var(--text2);
   text-transform:uppercase;
-  font-weight:600;
+  letter-spacing:.5px;
 }
 
 .inp{
   background:var(--bg3);
   border:1px solid var(--border);
-  border-radius:12px;
+  border-radius:var(--radius);
   color:var(--text);
-  padding:12px 14px;
   font-size:15px;
+  padding:11px 14px;
+  width:100%;
   outline:none;
 }
-
-.inp:focus{
-  border-color:var(--blue);
-}
-
-/* ===== CHIPS ===== */
 
 .chips{
   display:flex;
   gap:8px;
+  flex-wrap:wrap;
 }
 
 .chip{
   background:var(--bg3);
   border:1px solid var(--border);
-  border-radius:999px;
-  padding:8px 14px;
+  border-radius:20px;
+  padding:6px 14px;
   font-size:13px;
+  font-weight:600;
   cursor:pointer;
 }
 
@@ -240,12 +224,39 @@ body{
   border-color:var(--green);
 }
 
-/* ===== EXERCISE LIST ===== */
+.section-title{
+  font-size:13px;
+  color:var(--text2);
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.5px;
+}
+
+.divider{
+  height:1px;
+  background:var(--border);
+  margin:4px 0;
+}
+
+.bottom-bar{
+  padding:16px 20px 28px;
+  background:var(--bg2);
+  border-top:1px solid var(--border);
+}
+
+.row{
+  display:flex;
+  gap:10px;
+}
+
+.row>*{
+  flex:1;
+}
 
 .ex-item{
   background:var(--bg3);
   border:1px solid var(--border);
-  border-radius:12px;
+  border-radius:var(--radius);
   padding:12px 14px;
   display:flex;
   align-items:center;
@@ -253,27 +264,16 @@ body{
   margin-bottom:8px;
 }
 
-.ex-name{
-  font-size:15px;
-  font-weight:600;
-}
-
-.ex-meta{
-  font-size:13px;
-  color:var(--text2);
-}
-
 .ex-del{
+  color:var(--red);
   background:none;
   border:none;
-  color:var(--red);
   font-size:18px;
   cursor:pointer;
 }
 
-/* ===== WORKOUT ===== */
-
 .workout-bg{
+  background:var(--bg);
   min-height:100vh;
   display:flex;
   flex-direction:column;
@@ -287,8 +287,7 @@ body{
 .progress-fill{
   height:100%;
   background:var(--green);
-  width:0%;
-  transition:width .4s;
+  transition:width .4s ease;
 }
 
 .exercise-counter{
@@ -301,8 +300,8 @@ body{
 .ex-count-label{
   font-size:13px;
   color:var(--text2);
-  text-transform:uppercase;
   font-weight:600;
+  text-transform:uppercase;
 }
 
 .workout-main{
@@ -311,13 +310,14 @@ body{
   flex-direction:column;
   align-items:center;
   justify-content:center;
-  text-align:center;
   padding:20px;
+  text-align:center;
 }
 
 .phase-label{
   font-family:'Barlow Condensed',sans-serif;
   font-size:14px;
+  font-weight:700;
   letter-spacing:3px;
   text-transform:uppercase;
   color:var(--text2);
@@ -328,15 +328,18 @@ body{
   font-family:'Barlow Condensed',sans-serif;
   font-size:38px;
   font-weight:800;
-  line-height:1.1;
+  letter-spacing:1px;
   text-transform:uppercase;
-  margin-bottom:8px;
+  line-height:1.1;
+  margin-bottom:10px;
 }
 
 .ex-desc{
+  font-size:14px;
   color:var(--text2);
   margin-bottom:24px;
-  font-size:14px;
+  max-width:280px;
+  line-height:1.6;
 }
 
 .timer-wrap{
@@ -360,6 +363,7 @@ body{
   fill:none;
   stroke-width:10;
   stroke-linecap:round;
+  transition:stroke-dashoffset 1s linear;
 }
 
 .timer-text{
@@ -375,32 +379,29 @@ body{
   font-family:'Barlow Condensed',sans-serif;
   font-size:64px;
   font-weight:800;
+  line-height:1;
 }
 
 .timer-unit{
   font-size:13px;
   color:var(--text2);
+  text-transform:uppercase;
 }
 
 .reps-display{
   font-family:'Barlow Condensed',sans-serif;
-  font-size:84px;
-  color:var(--green);
+  font-size:80px;
   font-weight:800;
-}
-
-.bottom-bar{
-  padding:16px 20px 28px;
-  background:var(--bg2);
-  border-top:1px solid var(--border);
+  color:var(--green);
+  margin:12px 0 24px;
 }
 
 .next-preview{
   background:var(--bg2);
   border:1px solid var(--border);
-  border-radius:16px;
+  border-radius:var(--radius-lg);
   padding:14px 18px;
-  margin:0 20px 10px;
+  width:100%;
   display:flex;
   align-items:center;
   gap:12px;
@@ -425,17 +426,29 @@ body{
 .next-name{
   font-family:'Barlow Condensed',sans-serif;
   font-size:17px;
+  font-weight:700;
   text-transform:uppercase;
+}
+
+.empty-state{
+  text-align:center;
+  padding:48px 20px;
+  color:var(--text2);
+}
+
+.big-icon{
+  font-size:52px;
+  margin-bottom:12px;
 }
 
 .finish-overlay{
   display:none;
-  min-height:100vh;
-  padding:30px;
-  text-align:center;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
-  flex-direction:column;
+  min-height:100vh;
+  padding:32px;
+  text-align:center;
 }
 
 .finish-overlay.active{
@@ -445,59 +458,38 @@ body{
 .finish-title{
   font-family:'Barlow Condensed',sans-serif;
   font-size:42px;
-  color:var(--green);
+  font-weight:800;
   text-transform:uppercase;
-  margin-bottom:10px;
+  color:var(--green);
+  margin-bottom:12px;
 }
 
 .finish-stats{
-  width:100%;
   display:grid;
   grid-template-columns:1fr 1fr;
   gap:12px;
+  width:100%;
   margin:24px 0 32px;
 }
 
 .stat-card{
   background:var(--bg2);
   border:1px solid var(--border);
-  border-radius:14px;
+  border-radius:var(--radius);
   padding:14px;
 }
 
 .stat-val{
   font-family:'Barlow Condensed',sans-serif;
   font-size:28px;
-  color:var(--green);
   font-weight:800;
+  color:var(--green);
 }
 
 .stat-label{
   font-size:12px;
   color:var(--text2);
   text-transform:uppercase;
-}
-
-.section-title{
-  font-size:13px;
-  color:var(--text2);
-  text-transform:uppercase;
-  font-weight:600;
-}
-
-.empty-state{
-  text-align:center;
-  padding:40px 20px;
-  color:var(--text2);
-}
-
-.row{
-  display:flex;
-  gap:10px;
-}
-
-.row>*{
-  flex:1;
 }
 
 .countdown-pulse{
@@ -513,26 +505,17 @@ body{
 
 <body>
 
-<!-- ===== HOME ===== -->
-
+<!-- HOME -->
 <div class="screen active" id="screen-home">
-
   <div class="header">
     <h1>💪 Treningi</h1>
-
-    <button
-      class="btn btn-secondary btn-sm"
-      onclick="showCreateScreen()">
-      + Nowy trening
-    </button>
+    <button class="btn btn-secondary btn-sm" onclick="showScreen_create_new()">+ Nowy trening</button>
   </div>
 
   <div class="content" id="home-list"></div>
-
 </div>
 
-<!-- ===== CREATE ===== -->
-
+<!-- CREATE -->
 <div class="screen" id="screen-create">
 
   <div class="header">
@@ -547,27 +530,17 @@ body{
       <input class="inp" id="set-name">
     </div>
 
+    <div class="divider"></div>
+
     <p class="section-title">Ćwiczenia</p>
 
     <div id="exercises-list"></div>
 
-    <button
-      class="btn btn-secondary btn-full"
-      style="padding:14px"
-      onclick="showAddExercise()">
+    <button class="btn btn-secondary btn-full" onclick="showAddExercise()">
       + Dodaj ćwiczenie
     </button>
 
-    <div
-      id="add-exercise-panel"
-      style="
-      display:none;
-      background:var(--bg3);
-      border:1px solid var(--border);
-      border-radius:16px;
-      padding:16px;
-      flex-direction:column;
-      gap:12px">
+    <div id="add-exercise-panel" style="display:none;background:var(--bg3);border:1px solid var(--border);border-radius:var(--radius-lg);padding:16px;flex-direction:column;gap:12px">
 
       <div class="input-group">
         <label>Nazwa</label>
@@ -579,38 +552,46 @@ body{
         <input class="inp" id="ex-desc-inp">
       </div>
 
-      <div class="chips">
-        <div class="chip active" id="chip-reps" onclick="selectType('reps')">
-          🔢 Powtórzenia
-        </div>
+      <div class="input-group">
+        <label>Typ</label>
 
-        <div class="chip" id="chip-time" onclick="selectType('time')">
-          ⏱️ Czas
+        <div class="chips">
+          <div class="chip active" id="chip-reps" onclick="selectType('reps')">
+            🔢 Powtórzenia
+          </div>
+
+          <div class="chip" id="chip-time" onclick="selectType('time')">
+            ⏱️ Czas
+          </div>
         </div>
       </div>
 
       <div id="reps-fields">
+
         <div class="input-group">
           <label>Powtórzenia</label>
-          <input class="inp" id="ex-reps-inp" type="number">
+          <input class="inp" id="ex-reps-inp" type="number" min="1">
         </div>
+
       </div>
 
       <div id="time-fields" style="display:none">
+
         <div class="input-group">
-          <label>Sekundy</label>
-          <input class="inp" id="ex-time-inp" type="number">
+          <label>Czas ćwiczenia</label>
+          <input class="inp" id="ex-time-inp" type="number" min="5">
         </div>
+
+      </div>
+
+      <div class="input-group">
+        <label>Przygotowanie przed ćwiczeniem (sek)</label>
+        <input class="inp" id="ex-prep-inp" type="number" min="0" value="10">
       </div>
 
       <div class="row">
-        <button class="btn btn-secondary btn-sm" onclick="hideAddPanel()">
-          Anuluj
-        </button>
-
-        <button class="btn btn-primary btn-sm" onclick="addExercise()">
-          Dodaj
-        </button>
+        <button class="btn btn-secondary btn-sm" onclick="hideAddPanel()">Anuluj</button>
+        <button class="btn btn-primary btn-sm" onclick="addExercise()">Dodaj</button>
       </div>
 
     </div>
@@ -618,36 +599,22 @@ body{
   </div>
 
   <div class="bottom-bar">
-
     <div class="row">
 
-      <button
-        id="delete-set-btn"
-        class="btn btn-danger btn-sm"
-        style="display:none"
-        onclick="deleteCurrentSet()">
-
+      <button class="btn btn-secondary btn-sm" id="delete-set-btn" style="display:none;color:var(--red)" onclick="deleteCurrentSet()">
         Usuń
-
       </button>
 
-      <button
-        class="btn btn-primary btn-full"
-        style="padding:14px"
-        onclick="saveWorkoutSet()">
-
-        💾 Zapisz
-
+      <button class="btn btn-primary btn-full" onclick="saveWorkoutSet()">
+        Zapisz
       </button>
 
     </div>
-
   </div>
 
 </div>
 
-<!-- ===== WORKOUT ===== -->
-
+<!-- WORKOUT -->
 <div class="screen" id="screen-workout">
 
   <div class="workout-bg">
@@ -657,22 +624,16 @@ body{
     </div>
 
     <div class="exercise-counter">
-
       <span class="ex-count-label" id="ex-counter-text"></span>
 
-      <button
-        class="btn btn-secondary btn-sm"
-        onclick="stopWorkout()">
-
+      <button class="btn btn-secondary btn-sm" onclick="stopWorkout()">
         Stop
-
       </button>
-
     </div>
 
     <div class="workout-main" id="workout-main"></div>
 
-    <div id="next-section"></div>
+    <div style="padding:0 20px 8px" id="next-section"></div>
 
     <div class="bottom-bar" id="workout-bottom-bar"></div>
 
@@ -680,320 +641,172 @@ body{
 
 </div>
 
-<!-- ===== FINISH ===== -->
-
+<!-- FINISH -->
 <div class="finish-overlay" id="screen-finish">
 
-  <div style="font-size:72px;margin-bottom:12px">🏆</div>
+  <div style="font-size:72px;margin-bottom:16px">🏆</div>
 
-  <div class="finish-title">Ukończono!</div>
-
-  <p style="color:var(--text2)">Dobra robota 👏</p>
+  <div class="finish-title">
+    Trening ukończony
+  </div>
 
   <div class="finish-stats" id="finish-stats"></div>
 
-  <button
-    class="btn btn-primary btn-full"
-    style="padding:14px"
-    onclick="showScreen('screen-home')">
-
-    ← Powrót
-
+  <button class="btn btn-primary btn-full" onclick="showScreen('screen-home')">
+    Powrót
   </button>
 
 </div>
 
 <script>
+const STORAGE_KEY = 'custom_workout_sets_v3';
+const COUNTDOWN_AT = 5;
 
-/* =========================================================
-   SAMPLE SETS ZAWSZE Z HTML
-========================================================= */
-
-const SAMPLE_SETS = [
-
-{
-  id:'sample1',
-  sample:true,
-  name:'Poranna rutyna',
-  exercises:[
-    {id:'e1',name:'Krążenia głową w prawo',type:'time',duration:30},
-    {id:'e2',name:'Krążenia głową w lewo',type:'time',duration:30},
-    {id:'e3',name:'Krążenia barków do tyłu',type:'time',duration:30},
-    {id:'e4',name:'Krążenia barków do przodu',type:'time',duration:30},
-    {id:'e5',name:'Krążenia bioder',type:'time',duration:30},
-    {id:'e6',name:'Krążenia kolan',type:'time',duration:30},
-    {id:'e7',name:'Krążenia stóp',type:'time',duration:30}
-  ]
-},
-
-{
-  id:'sample2',
-  sample:true,
-  name:'Core',
-  exercises:[
-    {id:'c1',name:'Plank',type:'time',duration:60},
-    {id:'c2',name:'Brzuszki',type:'reps',reps:20},
-    {id:'c3',name:'Superman',type:'time',duration:30},
-    {id:'c4',name:'Leg raises',type:'reps',reps:12}
-  ]
-}
-
-];
-
-/* =========================================================
-   STORAGE
-========================================================= */
-
-const STORAGE_KEY = 'user_workout_sets_v3';
-
-let workoutSets = [];
-
-function loadData(){
-
-  let userSets = [];
-
-  try{
-
-    const raw = localStorage.getItem(STORAGE_KEY);
-
-    userSets = raw ? JSON.parse(raw) : [];
-
-    if(!Array.isArray(userSets)){
-      userSets = [];
-    }
-
-  }catch(e){
-
-    userSets = [];
-
-  }
-
-  // SAMPLE ZAWSZE Z HTML
-  workoutSets = [
-
-    ...SAMPLE_SETS,
-
-    ...userSets
-
-  ];
-
-}
-
-function saveUserSets(){
-
-  const onlyUserSets = workoutSets.filter(s => !s.sample);
-
-  localStorage.setItem(
-    STORAGE_KEY,
-    JSON.stringify(onlyUserSets)
-  );
-
-}
-
-/* =========================================================
-   GLOBAL STATE
-========================================================= */
-
+let customSets = [];
 let currentSetId = null;
 let currentExercises = [];
 let editingExType = 'reps';
 
-const PREP_TIME = 10;
-const COUNTDOWN_AT = 5;
+const sampleSets = [
+  {
+    id:'sample1',
+    sample:true,
+    name:'Poranna rutyna',
+    exercises:[
+      {id:'e1',name:'Krążenia głową w prawo',type:'time',duration:30,prep:10},
+      {id:'e2',name:'Krążenia głową w lewo',type:'time',duration:30,prep:10},
+      {id:'e3',name:'Krążenia barków',type:'time',duration:30,prep:8},
+      {id:'e4',name:'Krążenia bioder',type:'time',duration:30,prep:8},
+      {id:'e5',name:'Krążenia kolan',type:'time',duration:30,prep:6},
+    ]
+  },
 
-let wState = {
-  exercises:[],
-  currentIdx:0,
-  phase:'prep',
-  timer:null,
-  timeLeft:0,
-  prepTimeLeft:0,
-  startTime:null
-};
+  {
+    id:'sample2',
+    sample:true,
+    name:'Core',
+    exercises:[
+      {id:'c1',name:'Plank',type:'time',duration:60,prep:10},
+      {id:'c2',name:'Brzuszki',type:'reps',reps:20,prep:8},
+      {id:'c3',name:'Leg raises',type:'reps',reps:12,prep:8},
+    ]
+  }
+];
 
-/* =========================================================
-   SCREEN
-========================================================= */
+function getAllSets(){
+  return [...sampleSets, ...customSets];
+}
+
+function saveData(){
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(customSets));
+}
+
+function loadData(){
+  try{
+    customSets = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+  }catch(e){
+    customSets = [];
+  }
+}
 
 function showScreen(id){
+  document.querySelectorAll('.screen,.finish-overlay').forEach(el=>{
+    el.classList.remove('active');
+  });
 
-  document
-    .querySelectorAll('.screen,.finish-overlay')
-    .forEach(el => el.classList.remove('active'));
-
-  document
-    .getElementById(id)
-    .classList.add('active');
+  document.getElementById(id).classList.add('active');
 
   if(id === 'screen-home'){
     renderHome();
   }
-
 }
-
-/* =========================================================
-   HOME
-========================================================= */
 
 function renderHome(){
 
-  const el = document.getElementById('home-list');
+  const sets = getAllSets();
 
-  if(workoutSets.length === 0){
+  const list = document.getElementById('home-list');
 
-    el.innerHTML = `
+  if(sets.length === 0){
+
+    list.innerHTML = `
       <div class="empty-state">
-        Brak treningów
+        <div class="big-icon">📋</div>
+        <p>Brak treningów</p>
       </div>
     `;
 
     return;
   }
 
-  el.innerHTML =
-  `
-  <p class="section-title">Moje treningi</p>
-  `
+  list.innerHTML =
+    `<p class="section-title">Moje treningi</p>` +
 
-  +
+    sets.map(s=>`
+      <div class="card" onclick="openEditSet('${s.id}')">
 
-  workoutSets.map(set => `
+        <div class="card-row">
 
-    <div
-      class="card"
-      onclick="openEditSet('${set.id}')">
+          <div class="card-icon">
+            ${s.sample ? '⭐' : '💪'}
+          </div>
 
-      <div class="card-row">
+          <div class="card-info">
+            <h3>${s.name}</h3>
+            <p>${s.exercises.length} ćwiczeń</p>
+          </div>
 
-        <div class="card-icon">
-          ${getSetEmoji(set)}
-        </div>
-
-        <div class="card-info">
-
-          <h3>${set.name}</h3>
-
-          <p>
-            ${set.exercises.length} ćwiczeń ·
-            ${getSetDuration(set)} min
-          </p>
+          <button class="btn btn-primary btn-sm"
+            onclick="event.stopPropagation();startWorkout('${s.id}')">
+            ▶ Start
+          </button>
 
         </div>
-
-        <button
-          class="btn btn-primary btn-sm"
-          onclick="event.stopPropagation();startWorkout('${set.id}')">
-
-          ▶ Start
-
-        </button>
 
       </div>
-
-    </div>
-
-  `).join('');
-
+    `).join('');
 }
 
-function getSetEmoji(set){
-
-  const allTime = set.exercises.every(e => e.type === 'time');
-  const allReps = set.exercises.every(e => e.type === 'reps');
-
-  if(allTime) return '⏱️';
-  if(allReps) return '🔢';
-
-  return '⚡';
-
-}
-
-function getSetDuration(set){
-
-  let secs = 0;
-
-  set.exercises.forEach(ex => {
-
-    secs += 10;
-
-    if(ex.type === 'time'){
-      secs += ex.duration || 30;
-    }else{
-      secs += 45;
-    }
-
-  });
-
-  return Math.ceil(secs / 60);
-
-}
-
-/* =========================================================
-   CREATE / EDIT
-========================================================= */
-
-function showCreateScreen(){
+function showScreen_create_new(){
 
   currentSetId = null;
   currentExercises = [];
 
   document.getElementById('set-name').value = '';
 
-  document.getElementById('create-title').textContent =
-    'Nowy zestaw';
+  document.getElementById('create-title').textContent = 'Nowy zestaw';
 
-  document.getElementById('delete-set-btn').style.display =
-    'none';
+  document.getElementById('delete-set-btn').style.display = 'none';
 
   renderExercisesList();
 
   hideAddPanel();
 
   showScreen('screen-create');
-
 }
 
 function openEditSet(id){
 
-  const set = workoutSets.find(s => s.id === id);
+  const set = getAllSets().find(s=>s.id===id);
 
-  if(!set) return;
-
-  // sample można edytować jako kopię
   if(set.sample){
-
-    currentSetId = null;
-
-    document.getElementById('create-title').textContent =
-      'Kopia zestawu';
-
-    document.getElementById('delete-set-btn').style.display =
-      'none';
-
-  }else{
-
-    currentSetId = id;
-
-    document.getElementById('create-title').textContent =
-      'Edytuj zestaw';
-
-    document.getElementById('delete-set-btn').style.display =
-      'block';
-
+    startWorkout(id);
+    return;
   }
 
-  currentExercises =
-    JSON.parse(JSON.stringify(set.exercises));
+  currentSetId = id;
 
-  document.getElementById('set-name').value =
-    set.name;
+  currentExercises = JSON.parse(JSON.stringify(set.exercises));
+
+  document.getElementById('set-name').value = set.name;
+
+  document.getElementById('create-title').textContent = 'Edytuj zestaw';
+
+  document.getElementById('delete-set-btn').style.display = 'flex';
 
   renderExercisesList();
 
-  hideAddPanel();
-
   showScreen('screen-create');
-
 }
 
 function renderExercisesList(){
@@ -1003,8 +816,9 @@ function renderExercisesList(){
   if(currentExercises.length === 0){
 
     el.innerHTML = `
-      <div class="empty-state">
-        Dodaj ćwiczenia
+      <div class="empty-state" style="padding:24px 0">
+        <div class="big-icon" style="font-size:32px">➕</div>
+        <p style="font-size:13px">Dodaj ćwiczenia</p>
       </div>
     `;
 
@@ -1015,121 +829,92 @@ function renderExercisesList(){
 
     <div class="ex-item">
 
-      <div style="color:var(--text3)">
-        ${i+1}
-      </div>
-
       <div style="flex:1">
 
-        <div class="ex-name">
-          ${ex.name}
+        <div style="font-weight:600">
+          ${i+1}. ${ex.name}
         </div>
 
-        <div class="ex-meta">
+        <div style="font-size:13px;color:var(--text2);margin-top:4px">
 
           ${ex.type === 'time'
-            ? '⏱ ' + ex.duration + 's'
-            : '🔢 ' + ex.reps + ' powtórzeń'
-          }
+            ? `⏱ ${ex.duration}s`
+            : `🔢 ${ex.reps} powt.`}
+
+          · przygotowanie ${ex.prep || 0}s
 
         </div>
 
       </div>
 
-      <button
-        class="ex-del"
-        onclick="removeExercise(${i})">
-
+      <button class="ex-del" onclick="removeExercise(${i})">
         ✕
       </button>
 
     </div>
 
   `).join('');
-
 }
 
 function removeExercise(i){
-
   currentExercises.splice(i,1);
-
   renderExercisesList();
-
 }
 
 function showAddExercise(){
 
-  document.getElementById('add-exercise-panel')
-    .style.display = 'flex';
+  document.getElementById('add-exercise-panel').style.display = 'flex';
 
+  document.getElementById('ex-name-inp').value = '';
+  document.getElementById('ex-desc-inp').value = '';
+  document.getElementById('ex-reps-inp').value = '';
+  document.getElementById('ex-time-inp').value = '';
+  document.getElementById('ex-prep-inp').value = '10';
+
+  selectType('reps');
 }
 
 function hideAddPanel(){
-
-  document.getElementById('add-exercise-panel')
-    .style.display = 'none';
-
+  document.getElementById('add-exercise-panel').style.display = 'none';
 }
 
 function selectType(type){
 
   editingExType = type;
 
-  document
-    .getElementById('chip-reps')
-    .classList.toggle('active', type === 'reps');
+  document.getElementById('chip-reps').classList.toggle('active', type === 'reps');
+  document.getElementById('chip-time').classList.toggle('active', type === 'time');
 
-  document
-    .getElementById('chip-time')
-    .classList.toggle('active', type === 'time');
+  document.getElementById('reps-fields').style.display =
+    type === 'reps' ? 'block' : 'none';
 
-  document
-    .getElementById('reps-fields')
-    .style.display =
-      type === 'reps' ? 'block' : 'none';
-
-  document
-    .getElementById('time-fields')
-    .style.display =
-      type === 'time' ? 'block' : 'none';
-
+  document.getElementById('time-fields').style.display =
+    type === 'time' ? 'block' : 'none';
 }
 
 function addExercise(){
 
   const name =
-    document.getElementById('ex-name-inp')
-    .value
-    .trim();
+    document.getElementById('ex-name-inp').value.trim();
 
   if(!name) return;
 
-  const desc =
-    document.getElementById('ex-desc-inp')
-    .value
-    .trim();
+  const prep =
+    parseInt(document.getElementById('ex-prep-inp').value) || 0;
 
   const ex = {
-    id:'ex_' + Date.now(),
+    id:'ex_'+Date.now(),
     name,
-    desc,
-    type:editingExType
+    type:editingExType,
+    prep
   };
 
   if(editingExType === 'time'){
-
     ex.duration =
-      parseInt(
-        document.getElementById('ex-time-inp').value
-      ) || 30;
-
+      parseInt(document.getElementById('ex-time-inp').value) || 30;
   }else{
-
     ex.reps =
-      parseInt(
-        document.getElementById('ex-reps-inp').value
-      ) || 10;
-
+      parseInt(document.getElementById('ex-reps-inp').value) || 10;
   }
 
   currentExercises.push(ex);
@@ -1137,20 +922,14 @@ function addExercise(){
   renderExercisesList();
 
   hideAddPanel();
-
 }
 
 function saveWorkoutSet(){
 
   const name =
-    document.getElementById('set-name')
-    .value
-    .trim();
+    document.getElementById('set-name').value.trim();
 
-  if(!name){
-    alert('Podaj nazwę');
-    return;
-  }
+  if(!name) return;
 
   if(currentExercises.length === 0){
     alert('Dodaj ćwiczenia');
@@ -1160,54 +939,99 @@ function saveWorkoutSet(){
   if(currentSetId){
 
     const idx =
-      workoutSets.findIndex(s => s.id === currentSetId);
+      customSets.findIndex(s=>s.id===currentSetId);
 
-    if(idx > -1){
-
-      workoutSets[idx].name = name;
-      workoutSets[idx].exercises = currentExercises;
-
-    }
+    customSets[idx].name = name;
+    customSets[idx].exercises = currentExercises;
 
   }else{
 
-    workoutSets.push({
-      id:'set_' + Date.now(),
+    customSets.push({
+      id:'set_'+Date.now(),
       name,
       exercises:currentExercises
     });
-
   }
 
-  saveUserSets();
+  saveData();
 
   showScreen('screen-home');
-
 }
 
 function deleteCurrentSet(){
 
   if(!currentSetId) return;
 
-  if(!confirm('Usunąć zestaw?')) return;
+  customSets =
+    customSets.filter(s=>s.id!==currentSetId);
 
-  workoutSets =
-    workoutSets.filter(s => s.id !== currentSetId);
-
-  saveUserSets();
+  saveData();
 
   showScreen('screen-home');
-
 }
 
-/* =========================================================
-   WORKOUT
-========================================================= */
+let audioCtx = null;
+
+function ensureAudio(){
+
+  if(!audioCtx){
+
+    const AudioContextClass =
+      window.AudioContext || window.webkitAudioContext;
+
+    if(AudioContextClass){
+      audioCtx = new AudioContextClass();
+    }
+  }
+
+  if(audioCtx && audioCtx.state === 'suspended'){
+    audioCtx.resume();
+  }
+}
+
+function playBeep(freq=900,duration=90,volume=0.03){
+
+  try{
+
+    ensureAudio();
+
+    if(!audioCtx) return;
+
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+
+    osc.type = 'sine';
+    osc.frequency.value = freq;
+
+    gain.gain.value = volume;
+
+    osc.connect(gain);
+    gain.connect(audioCtx.destination);
+
+    osc.start();
+
+    setTimeout(()=>{
+      osc.stop();
+    }, duration);
+
+  }catch(e){}
+}
+
+let wState = {
+  exercises:[],
+  currentIdx:0,
+  phase:'prep',
+  timer:null,
+  timeLeft:0,
+  startTime:0
+};
 
 function startWorkout(id){
 
+  ensureAudio();
+
   const set =
-    workoutSets.find(s => s.id === id);
+    getAllSets().find(s=>s.id===id);
 
   if(!set) return;
 
@@ -1219,56 +1043,73 @@ function startWorkout(id){
     phase:'prep',
     timer:null,
     timeLeft:0,
-    prepTimeLeft:PREP_TIME,
     startTime:Date.now()
   };
 
   showScreen('screen-workout');
 
   startPrepPhase();
-
 }
 
 function startPrepPhase(){
 
+  const ex = wState.exercises[wState.currentIdx];
+
   wState.phase = 'prep';
-  wState.prepTimeLeft = PREP_TIME;
+  wState.timeLeft = ex.prep || 0;
 
   renderWorkoutUI();
 
   clearInterval(wState.timer);
 
+  if(wState.timeLeft <= 0){
+    startActivePhase();
+    return;
+  }
+
   wState.timer = setInterval(()=>{
 
-    wState.prepTimeLeft--;
+    wState.timeLeft--;
 
-    if(wState.prepTimeLeft <= 0){
+    if(
+      wState.timeLeft <= COUNTDOWN_AT &&
+      wState.timeLeft > 0
+    ){
 
-      clearInterval(wState.timer);
+      if(wState.timeLeft === 1){
+        playBeep(1400,120,0.05);
+      }else{
+        playBeep(900,70,0.03);
+      }
 
-      startActivePhase();
-
+      navigator.vibrate?.(40);
     }
 
     renderWorkoutUI();
 
-  },1000);
+    if(wState.timeLeft <= 0){
 
+      clearInterval(wState.timer);
+
+      playBeep(1700,180,0.06);
+
+      navigator.vibrate?.([80,40,80]);
+
+      startActivePhase();
+    }
+
+  },1000);
 }
 
 function startActivePhase(){
 
-  const ex =
-    wState.exercises[wState.currentIdx];
+  const ex = wState.exercises[wState.currentIdx];
 
   wState.phase = 'active';
 
   if(ex.type === 'reps'){
-
     renderWorkoutUI();
-
     return;
-
   }
 
   wState.timeLeft = ex.duration;
@@ -1281,18 +1122,34 @@ function startActivePhase(){
 
     wState.timeLeft--;
 
-    if(wState.timeLeft <= 0){
+    if(
+      wState.timeLeft <= COUNTDOWN_AT &&
+      wState.timeLeft > 0
+    ){
 
-      clearInterval(wState.timer);
+      if(wState.timeLeft === 1){
+        playBeep(1400,120,0.05);
+      }else{
+        playBeep(950,70,0.03);
+      }
 
-      advanceExercise();
-
+      navigator.vibrate?.(40);
     }
 
     renderWorkoutUI();
 
-  },1000);
+    if(wState.timeLeft <= 0){
 
+      clearInterval(wState.timer);
+
+      playBeep(1700,180,0.06);
+
+      navigator.vibrate?.([100,50,100]);
+
+      advanceExercise();
+    }
+
+  },1000);
 }
 
 function advanceExercise(){
@@ -1300,21 +1157,14 @@ function advanceExercise(){
   wState.currentIdx++;
 
   if(wState.currentIdx >= wState.exercises.length){
-
     finishWorkout();
-
   }else{
-
     startPrepPhase();
-
   }
-
 }
 
 function repsDone(){
-
   advanceExercise();
-
 }
 
 function stopWorkout(){
@@ -1322,7 +1172,6 @@ function stopWorkout(){
   clearInterval(wState.timer);
 
   showScreen('screen-home');
-
 }
 
 function finishWorkout(){
@@ -1330,7 +1179,7 @@ function finishWorkout(){
   clearInterval(wState.timer);
 
   const elapsed =
-    Math.round((Date.now() - wState.startTime)/1000);
+    Math.round((Date.now()-wState.startTime)/1000);
 
   const mins = Math.floor(elapsed/60);
   const secs = elapsed % 60;
@@ -1341,6 +1190,7 @@ function finishWorkout(){
       <div class="stat-val">
         ${wState.exercises.length}
       </div>
+
       <div class="stat-label">
         Ćwiczeń
       </div>
@@ -1350,6 +1200,7 @@ function finishWorkout(){
       <div class="stat-val">
         ${mins}:${String(secs).padStart(2,'0')}
       </div>
+
       <div class="stat-label">
         Czas
       </div>
@@ -1357,40 +1208,32 @@ function finishWorkout(){
 
   `;
 
-  document
-    .querySelectorAll('.screen,.finish-overlay')
-    .forEach(el => el.classList.remove('active'));
+  document.querySelectorAll('.screen,.finish-overlay').forEach(el=>{
+    el.classList.remove('active');
+  });
 
-  document
-    .getElementById('screen-finish')
-    .classList.add('active');
-
+  document.getElementById('screen-finish').classList.add('active');
 }
-
-/* =========================================================
-   RENDER WORKOUT UI
-========================================================= */
 
 function renderWorkoutUI(){
 
   const ex =
     wState.exercises[wState.currentIdx];
 
-  const nextEx =
-    wState.exercises[wState.currentIdx + 1];
-
   const total =
     wState.exercises.length;
 
+  const nextEx =
+    wState.exercises[wState.currentIdx + 1];
+
   const progress =
-    ((wState.currentIdx + 0.5) / total) * 100;
+    ((wState.currentIdx + (wState.phase === 'active' ? .5 : 0)) / total) * 100;
 
-  document.getElementById('progress-fill')
-    .style.width = progress + '%';
+  document.getElementById('progress-fill').style.width =
+    progress + '%';
 
-  document.getElementById('ex-counter-text')
-    .textContent =
-      `Ćwiczenie ${wState.currentIdx + 1} z ${total}`;
+  document.getElementById('ex-counter-text').textContent =
+    `Ćwiczenie ${wState.currentIdx+1} z ${total}`;
 
   const main =
     document.getElementById('workout-main');
@@ -1403,13 +1246,15 @@ function renderWorkoutUI(){
 
   if(wState.phase === 'prep'){
 
-    const t = wState.prepTimeLeft;
+    const t = wState.timeLeft;
 
     const dashTotal = 565;
 
     const dashOffset =
-      dashTotal -
-      (dashTotal * t / PREP_TIME);
+      dashTotal - (dashTotal * t / (ex.prep || 1));
+
+    const countdown =
+      t <= COUNTDOWN_AT;
 
     main.innerHTML = `
 
@@ -1417,34 +1262,32 @@ function renderWorkoutUI(){
         Przygotuj się
       </div>
 
-      <div class="ex-name-big">
+      <div class="ex-name-big" style="color:var(--orange)">
         ${ex.name}
       </div>
 
-      <div class="timer-wrap ${t <= COUNTDOWN_AT ? 'countdown-pulse' : ''}">
+      <div class="timer-wrap ${countdown ? 'countdown-pulse' : ''}">
 
-        <svg class="timer-svg" width="200" height="200">
+        <svg class="timer-svg" width="200" height="200" viewBox="0 0 200 200">
 
-          <circle
-            class="timer-track"
-            cx="100"
-            cy="100"
-            r="90"/>
+          <circle class="timer-track" cx="100" cy="100" r="90"/>
 
           <circle
             class="timer-arc"
             cx="100"
             cy="100"
             r="90"
-            stroke="${t <= COUNTDOWN_AT ? '#ff3b3b' : '#ff6b2b'}"
+            stroke="${countdown ? '#ff3b3b' : '#ff6b2b'}"
             stroke-dasharray="${dashTotal}"
-            stroke-dashoffset="${dashOffset}"/>
+            stroke-dashoffset="${dashOffset}"
+          />
 
         </svg>
 
         <div class="timer-text">
 
-          <div class="timer-num">
+          <div class="timer-num"
+            style="color:${countdown ? 'var(--red)' : 'var(--orange)'}">
             ${t}
           </div>
 
@@ -1455,17 +1298,12 @@ function renderWorkoutUI(){
         </div>
 
       </div>
-
     `;
 
     bottom.innerHTML = `
-      <button
-        class="btn btn-primary btn-full"
-        style="padding:16px"
+      <button class="btn btn-orange btn-full"
         onclick="clearInterval(wState.timer);startActivePhase()">
-
         Start teraz
-
       </button>
     `;
 
@@ -1475,8 +1313,8 @@ function renderWorkoutUI(){
 
       main.innerHTML = `
 
-        <div class="phase-label">
-          Powtórzenia
+        <div class="phase-label" style="color:var(--green)">
+          Wykonaj
         </div>
 
         <div class="ex-name-big">
@@ -1490,12 +1328,10 @@ function renderWorkoutUI(){
       `;
 
       bottom.innerHTML = `
-        <button
-          class="btn btn-primary btn-full btn-large"
+        <button class="btn btn-primary btn-full"
+          style="font-size:22px;padding:18px"
           onclick="repsDone()">
-
-          ZROBIONE
-
+          Zrobione
         </button>
       `;
 
@@ -1506,12 +1342,14 @@ function renderWorkoutUI(){
       const dashTotal = 565;
 
       const dashOffset =
-        dashTotal -
-        (dashTotal * t / ex.duration);
+        dashTotal - (dashTotal * t / ex.duration);
+
+      const countdown =
+        t <= COUNTDOWN_AT;
 
       main.innerHTML = `
 
-        <div class="phase-label">
+        <div class="phase-label" style="color:var(--green)">
           Czas
         </div>
 
@@ -1519,30 +1357,28 @@ function renderWorkoutUI(){
           ${ex.name}
         </div>
 
-        <div class="timer-wrap ${t <= COUNTDOWN_AT ? 'countdown-pulse' : ''}">
+        <div class="timer-wrap ${countdown ? 'countdown-pulse' : ''}">
 
-          <svg class="timer-svg" width="200" height="200">
+          <svg class="timer-svg" width="200" height="200" viewBox="0 0 200 200">
 
-            <circle
-              class="timer-track"
-              cx="100"
-              cy="100"
-              r="90"/>
+            <circle class="timer-track" cx="100" cy="100" r="90"/>
 
             <circle
               class="timer-arc"
               cx="100"
               cy="100"
               r="90"
-              stroke="${t <= COUNTDOWN_AT ? '#ff3b3b' : '#2eff8a'}"
+              stroke="${countdown ? '#ff3b3b' : '#2eff8a'}"
               stroke-dasharray="${dashTotal}"
-              stroke-dashoffset="${dashOffset}"/>
+              stroke-dashoffset="${dashOffset}"
+            />
 
           </svg>
 
           <div class="timer-text">
 
-            <div class="timer-num">
+            <div class="timer-num"
+              style="color:${countdown ? 'var(--red)' : 'var(--green)'}">
               ${t}
             </div>
 
@@ -1553,22 +1389,15 @@ function renderWorkoutUI(){
           </div>
 
         </div>
-
       `;
 
       bottom.innerHTML = `
-        <button
-          class="btn btn-secondary btn-full"
-          style="padding:16px"
+        <button class="btn btn-secondary btn-full"
           onclick="clearInterval(wState.timer);advanceExercise()">
-
           Pomiń
-
         </button>
       `;
-
     }
-
   }
 
   if(nextEx){
@@ -1599,19 +1428,33 @@ function renderWorkoutUI(){
 
   }else{
 
-    nextSection.innerHTML = '';
+    nextSection.innerHTML = `
+      <div class="next-preview">
+        <div class="next-icon">🏁</div>
 
+        <div style="flex:1">
+
+          <div class="next-label">
+            Ostatnie ćwiczenie
+          </div>
+
+          <div class="next-name">
+            Dobra robota!
+          </div>
+
+        </div>
+
+      </div>
+    `;
   }
-
 }
-
-/* =========================================================
-   INIT
-========================================================= */
 
 loadData();
 renderHome();
 
+document.body.addEventListener('touchstart', ensureAudio, {once:true});
+document.body.addEventListener('click', ensureAudio, {once:true});
 </script>
+
 </body>
 </html>
