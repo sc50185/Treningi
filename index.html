@@ -331,7 +331,7 @@ function renderHome(){
     list.innerHTML = `<div class="empty-state"><div class="big-icon">📋</div><p>Brak zestawów ćwiczeń.<br>Stwórz swój pierwszy trening!</p></div>`;
     return;
   }
-  list.innerHTML = '<p class="section-title">Moje zestawy</p>' + workoutSets.map(s=>`
+  list.innerHTML = '<p class="section-title">Moje treningi</p>' + workoutSets.map(s=>`
     <div class="card" onclick="openEditSet('${s.id}')">
       <div class="card-row">
         <div class="card-icon" style="background:var(--bg3)">${getSetEmoji(s)}</div>
