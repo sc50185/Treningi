@@ -500,6 +500,29 @@ body{
   0%,100%{opacity:1}
   50%{opacity:.45}
 }
+
+@media (max-height:850px){
+
+  #next-section{
+    padding-bottom:4px !important;
+  }
+
+  .next-preview{
+    padding:8px 12px;
+  }
+
+  .next-name{
+    font-size:14px;
+  }
+}
+
+@media (max-height:760px){
+
+  #next-section{
+    display:none;
+  }
+}
+
 </style>
 </head>
 
@@ -697,6 +720,8 @@ const sampleSets = [
     ]
   }
 ];
+
+const $ = id => document.getElementById(id);
 
 function getAllSets(){
   return [...sampleSets, ...customSets];
